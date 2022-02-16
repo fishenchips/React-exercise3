@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Form from './Form'
 import TodoList from './TodoList'
 
-
 function TodoApp() {
     //create hook for todos, with useState, to an empty array
     const [todos, setTodos] = useState([])
@@ -26,7 +25,6 @@ function TodoApp() {
                 ? updatedTodo
                 : todo
         ));
-
         console.log(updatedTodos)
 
         setTodos(updatedTodos)

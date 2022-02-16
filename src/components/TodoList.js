@@ -7,7 +7,7 @@ function TodoList({ todos, updateTodo }) {
         <h3>To Do List</h3>
         <ul className='uncompleted-list'>
             {
-                todos.map( (todo) => <Todo key={todo.id} todo={todo} updateToto={updateTodo} />)
+                todos.map( (todo) => <Todo key={todo.id} todo={todo} updateTodo={updateTodo} />)
             }
         </ul>
     </div>
