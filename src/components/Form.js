@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 //child component for the form
-function form() {
+function Form({addTodo}) {
     const [task, setTask] = useState("")
 
     //function to setTask == what is filled in the input
@@ -22,14 +22,15 @@ function form() {
 
         //linking to parent, sending function up
         addTodo(newTodo)
+        console.log(newTodo)
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" onSubmit={handleChange} value={}/>
+            <input type="text" onSubmit={handleChange} value={task}/>
             <button>Stop slacking and add things to do!</button>
         </form>
     )
 }
 
-export default form
+export default Form
