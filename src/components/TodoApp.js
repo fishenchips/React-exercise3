@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Todo from './Todo'
 import Form from './Form'
+import TodoList from './TodoList'
 
 
 function TodoApp() {
@@ -15,11 +15,28 @@ function TodoApp() {
         ])
     }
 
+    //function to change todos
+    const updateTodo = (updatedTodo) => {
+        console.log("TodoApps' updateTodo Function")
+        console.log(updatedTodo)
+
+        //If id of the todo is the same as the one we update, we use the updated Todo, otherwise normal todo
+        const updatedTodos = todos.map( todo => (
+            todo.id === updatedTodo.id
+                ? updatedTodo
+                : todo
+        ));
+
+        console.log(updatedTodos)
+
+        setTodos(updatedTodos)
+    }
+
 
   return (
     <div>
-        <Form />
-        <Todo />
+        <Form addTodo={addTodo}/>
+        <TodoList todos={todos} updateTodo={updateTodo}/>
     </div>
   )
 }

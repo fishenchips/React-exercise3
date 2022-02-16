@@ -27,7 +27,7 @@ function Form({addTodo}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" onSubmit={handleChange} value={task}/>
+            <input type="text" onChange={handleChange} value={task}/>
             <button>Stop slacking and add things to do!</button>
         </form>
     )
