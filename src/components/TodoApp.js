@@ -33,7 +33,7 @@ function TodoApp() {
 
     //function need access to hook setTodo, so either we send setTodo down or create the function here in 
     // TodoApp.js -- Function filters out the todo with id of the button that it pressed and removed it from the
-    // array, then updates the Array.
+    // array, then updates the Array without the deleted todo.
     const deleteTodo = (id) => {
         const updatedTodos = todos.filter((todo) => todo.id !== id)
 

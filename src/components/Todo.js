@@ -32,6 +32,7 @@ function Todo({ todo, updateTodo, deleteTodo}) {
     const deletedTodo = (e) => {
         e.preventDefault();
 
+        //todo (props) has access to id 
         deleteTodo(todo.id)
     }
     
