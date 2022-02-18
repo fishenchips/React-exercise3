@@ -26,15 +26,26 @@ function TodoApp() {
                 : todo
         ));
         console.log(updatedTodos)
+        
+        //update the whole list based on above
+         setTodos(updatedTodos)
+    }
+
+    //function need access to hook setTodo, so either we send setTodo down or create the function here in 
+    // TodoApp.js -- Function filters out the todo with id of the button that it pressed and removed it from the
+    // array, then updates the Array.
+    const deleteTodo = (id) => {
+        const updatedTodos = todos.filter((todo) => todo.id !== id)
+
+        console.log(updatedTodos)
 
         setTodos(updatedTodos)
     }
 
-
   return (
     <div>
         <Form addTodo={addTodo}/>
-        <TodoList todos={todos} updateTodo={updateTodo}/>
+        <TodoList todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo} />
     </div>
   )
 }

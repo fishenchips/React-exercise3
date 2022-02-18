@@ -14,15 +14,21 @@ function Form({addTodo}) {
 
         //giving newTodo object correct attributes 
         const newTodo = {
-            id: Math.random() * 1000, // had to add () otherwise it didnt work!
+            id: Math.random() * 1000, // had to add () otherwise it didnt work! 
+            //could also use new Date().getTime() for unique value
             task: task,
             disabled: true, //when added to the Todolist, li will be disabled
-            changeBtnLabel: "Change" 
-        }
+            changeBtnLabel: "Change", 
+/*             completed: false
+metoden finns redan, updateTodo
+ */        }
 
         //linking to parent, sending function up
         addTodo(newTodo)
         console.log("hello from new todo", newTodo)
+        
+        //clearing input value after sumbitting
+        setTask("")
     }
 
     return (

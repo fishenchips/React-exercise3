@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Todo({ todo, updateTodo}) {
+function Todo({ todo, updateTodo, deleteTodo}) {
     //update function to set updated value == task, and creating a copy of the array
     const handleUpdateTask = (e) => {
         console.log("todo-> handleUpdateTask")
@@ -28,6 +28,13 @@ function Todo({ todo, updateTodo}) {
         updateTodo(updatedTodo)
     }
 
+    // create new function to send up the Id of the deleted Li to deleteTodo in TodoApp.js
+    const deletedTodo = (e) => {
+        e.preventDefault();
+
+        deleteTodo(todo.id)
+    }
+    
   return (
         <li>
             <input 
@@ -37,8 +44,9 @@ function Todo({ todo, updateTodo}) {
                 onChange={handleUpdateTask}
             />
             <button onClick={toggleInput}>{todo.changeBtnLabel}</button>
+            <button onClick={deletedTodo}>Delete</button>
         </li>
     )
-}
+  }
 
 export default Todo
