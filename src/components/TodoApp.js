@@ -42,10 +42,15 @@ function TodoApp() {
         setTodos(updatedTodos)
     }
 
+    //function to clear the array
+    const clearTodos = () => {
+        setTodos([])
+    }
+
 
   return (
     <div>
-        <Form addTodo={addTodo}/>
+        <Form addTodo={addTodo} clearTodos={clearTodos}/>
         <TodoList 
             title="To Do"
             id="uncompleted-list"

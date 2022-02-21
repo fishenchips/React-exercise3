@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 //child component for the form
-function Form({addTodo}) {
+function Form({addTodo, clearTodos}) {
     const [task, setTask] = useState('')
 
     //function to setTask == what is filled in the input
@@ -20,7 +20,7 @@ function Form({addTodo}) {
             disabled: true, //when added to the Todolist, li will be disabled
             changeBtnLabel: "Change", 
             completed: false,
-            completeBtnlabel: "Completed &#10004"
+            completeBtnLabel: "Completed"
 //metoden finns redan, updateTodo
         }
 
@@ -32,10 +32,17 @@ function Form({addTodo}) {
         setTask("")
     }
 
+    // add a clear function and send it up too todoapp
+    const handleClearBtn = (e) => {
+        e.preventDefault();
+        clearTodos();
+    } 
+
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" value={task} onChange={handleChange}/>
             <button>Stop slacking and add things to do!</button>
+            <button onClick={handleClearBtn}>Clear</button>
         </form>
     )
 }

@@ -43,7 +43,7 @@ function Todo({ todo, updateTodo, deleteTodo}) {
         const updatedTodo = {
             ...todo,
             completed: !todo.completed,
-            CompleteBtnLabel: todo.completed ? "Completed &#10004" : "Alter"
+            completeBtnLabel: todo.completed ? "Completed" : "Alter"
         }
 
         updateTodo(updatedTodo)
@@ -59,7 +59,7 @@ function Todo({ todo, updateTodo, deleteTodo}) {
             />
             <button onClick={toggleInput}>{todo.changeBtnLabel}</button>
             <button onClick={deletedTodo}>Delete</button>
-            <button onClick={handleCompleteBtn}>Completed &#10004;</button>
+            <button onClick={handleCompleteBtn}>{todo.completeBtnLabel}</button>
         </li>
     )
   }
