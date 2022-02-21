@@ -19,9 +19,10 @@ function Form({addTodo}) {
             task: task,
             disabled: true, //when added to the Todolist, li will be disabled
             changeBtnLabel: "Change", 
-/*             completed: false
-metoden finns redan, updateTodo
- */        }
+            completed: false,
+            completeBtnlabel: "Completed &#10004"
+//metoden finns redan, updateTodo
+        }
 
         //linking to parent, sending function up
         addTodo(newTodo)

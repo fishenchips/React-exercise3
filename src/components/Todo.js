@@ -35,6 +35,19 @@ function Todo({ todo, updateTodo, deleteTodo}) {
         //todo (props) has access to id 
         deleteTodo(todo.id)
     }
+
+    //Create new function to send up a version up updatedTodo that changes boolean value of completed
+    const handleCompleteBtn = (e) => {
+        e.preventDefault();
+
+        const updatedTodo = {
+            ...todo,
+            completed: !todo.completed,
+            CompleteBtnLabel: todo.completed ? "Completed &#10004" : "Alter"
+        }
+
+        updateTodo(updatedTodo)
+    }
     
   return (
         <li>
@@ -46,6 +59,7 @@ function Todo({ todo, updateTodo, deleteTodo}) {
             />
             <button onClick={toggleInput}>{todo.changeBtnLabel}</button>
             <button onClick={deletedTodo}>Delete</button>
+            <button onClick={handleCompleteBtn}>Completed &#10004;</button>
         </li>
     )
   }

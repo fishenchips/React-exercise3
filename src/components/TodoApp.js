@@ -14,7 +14,7 @@ function TodoApp() {
         ])
     }
 
-    //function to change todos
+    //function to change todos, used for move to complete as well
     const updateTodo = (updatedTodo) => {
         console.log("TodoApps' updateTodo Function")
         console.log(updatedTodo)
@@ -41,6 +41,7 @@ function TodoApp() {
 
         setTodos(updatedTodos)
     }
+
 
   return (
     <div>
