@@ -46,7 +46,23 @@ function TodoApp() {
   return (
     <div>
         <Form addTodo={addTodo}/>
-        <TodoList todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo} />
+        <TodoList 
+            title="To Do"
+            id="uncompleted-list"
+            todos={todos} 
+            updateTodo={updateTodo} 
+            deleteTodo={deleteTodo} 
+        />
+
+        <TodoList 
+            title="Completed"
+            id="completed-list"
+            todos={todos} 
+            updateTodo={updateTodo} 
+            deleteTodo={deleteTodo} 
+        />
+
+
     </div>
   )
 }
